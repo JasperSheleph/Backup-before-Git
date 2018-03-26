@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-gauge',
@@ -7,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GaugeComponent implements OnInit {
 
+  
+
   constructor() { }
 
   gaugeType = "full";
-  gaugeValue = 75.3;
+  gaugeValue = 47.4;
   gaugeLabel = "Index";
   gaugeAppendText = "";
 

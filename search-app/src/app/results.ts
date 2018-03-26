@@ -5,5 +5,5 @@ export class Results{
     body : string;
     city : string;
     location : any;
-    coordinates : Array<any>
+    coordinates : any;
 }

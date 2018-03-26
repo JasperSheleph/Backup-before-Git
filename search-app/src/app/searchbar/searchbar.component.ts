@@ -16,7 +16,6 @@ export class SearchbarComponent implements OnInit {
 
   public countryName : string;
   public results : Results[] = [];
-  
 
   constructor(private searchService : SearchService) { }
 
@@ -25,11 +24,12 @@ export class SearchbarComponent implements OnInit {
       for (let key in res){
         this.results.push(res[key]);
       } 
-      console.log(this.results[1].location.coordinates[0]);
+      // console.log(res);
+      console.log(this.results[1].location.coordinates[1]);
     },
     (error) => console.log("error : " + error));                                                             
   }
-
+  
   ngOnInit() {
   }
 
