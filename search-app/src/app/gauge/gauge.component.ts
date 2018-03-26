@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class GaugeComponent implements OnInit {
 
-  @Input() pollIndex;
+  @Input() resAQIUS : number;
 
   constructor() { }
 
@@ -16,11 +16,9 @@ export class GaugeComponent implements OnInit {
   gaugeLabel = "Index";
   gaugeAppendText = "";
 
-  
-
   ngOnInit() {
 
-    console.log(this.pollIndex);
+    console.log(this.resAQIUS);
   }
 
 }

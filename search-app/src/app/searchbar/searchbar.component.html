@@ -1,5 +1,5 @@
 <div>
-  <input  class = "searchbar" type = "text" [(ngModel)] ="countryName" (keyup.enter) = "getCountryDetails()"  placeholder="Which place do you wanna search ?">
+  <input  class = "searchbar" type = "text" [(ngModel)] ="countryName" (keyup.enter) = "getCitySpecificDetails()"  placeholder="Which place do you wanna search ?">
   <span class="highlight"></span>
   <span class="bar"></span>
   
@@ -7,7 +7,7 @@
 
 <h2> Results </h2>
 
-<app-gauge [pollIndex]="1+3" ></app-gauge>
+<app-gauge [resAQIUS]="_resAQIUS" ></app-gauge>
 
 
 <h2>{{tt}}</h2>

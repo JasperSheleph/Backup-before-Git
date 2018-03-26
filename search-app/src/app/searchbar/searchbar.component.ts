@@ -14,20 +14,27 @@ import { from } from 'rxjs/observable/from';
 
 export class SearchbarComponent implements OnInit {
 
-  public countryName : string;
   public results : Results[] = [];
-  public tt: string= "Jas";
+  public countryName : string;
+  public stateName : string = "California";
+  public cityName : string = "Los Angeles";
+
+  public _resAQIUS : number ;
+ 
   constructor(private searchService : SearchService) { }
 
-  public getCountryDetails (){
-    this.searchService.getDetails(this.countryName).subscribe((res) => {
-      for (let key in res){
+  public getCitySpecificDetails () {
+
+    this.searchService.getCitySpecificDetails(this.countryName, this.stateName, this.cityName)
+    .subscribe((res) => {
+      for (let key in res) {
         this.results.push(res[key]);
       } 
-      // console.log(res);
-      console.log(this.results[1].location.coordinates[1]);
+      console.log(this.results[1].current.pollution.aqius);
+      console.log(this.results[1].state);
+      this._resAQIUS  = this.results[1].current.pollution.aqius;
     },
-    (error) => console.log("error : " + error));                                                             
+    (error) => console.log("Error : " + error));                                                             
   }
   
   ngOnInit() {
