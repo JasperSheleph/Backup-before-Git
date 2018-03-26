@@ -16,7 +16,7 @@ export class SearchbarComponent implements OnInit {
 
   public countryName : string;
   public results : Results[] = [];
-
+  public tt: string= "Jas";
   constructor(private searchService : SearchService) { }
 
   public getCountryDetails (){
