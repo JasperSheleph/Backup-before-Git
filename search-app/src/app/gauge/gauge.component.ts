@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { SearchService } from '../search.service';
 
 @Component({
   selector: 'app-gauge',
@@ -7,18 +8,23 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class GaugeComponent implements OnInit {
 
-  @Input() resAQIUS : number;
+  @Input() resAQIUS;
 
-  constructor() { }
+  constructor(private searchService : SearchService) { }
 
   gaugeType = "full";
   gaugeValue = 47.4;
   gaugeLabel = "Index";
   gaugeAppendText = "";
 
-  ngOnInit() {
+  public displayGaugeComp () {
 
     console.log(this.resAQIUS);
+    
+  }
+
+  ngOnInit() {
+
   }
 
 }
