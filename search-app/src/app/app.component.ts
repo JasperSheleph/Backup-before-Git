@@ -1,5 +1,4 @@
-import { Component,OnInit } from '@angular/core';
-declare var google:any;
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,36 +7,6 @@ declare var google:any;
 })
 
 
-
-export class AppComponent implements OnInit {
-  title = 'Search Your Place !';
-  private static googleLoaded:any;
-
-  constructor(){
-      console.log("Here is GoogleChartComponent")
-  }
-
-  getGoogle() {
-      return google;
-  }
-  ngOnInit() {
-    console.log('ngOnInit');
-    if(!AppComponent.googleLoaded) {
-      AppComponent.googleLoaded = true;
-      google.charts.load('current',  {packages: ['corechart', 'bar']});
-    }
-    google.charts.setOnLoadCallback(() => this.drawGraph());
-  }
-
-  drawGraph(){
-      console.log("DrawGraph base class!!!! ");
-  }
-
-  createBarChart(element:any):any {
-      return new google.visualization.BarChart(element);
-  }
-
-  createDataTable(array:any[]):any {
-      return google.visualization.arrayToDataTable(array);
-  }
+export class AppComponent {
+  title = 'Search Your Place !';  
 }

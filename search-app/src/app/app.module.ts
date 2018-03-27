@@ -8,17 +8,22 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
 import { SearchService } from './search.service';
 import { NgxGaugeModule } from 'ngx-gauge';
 import { GaugeComponent } from './gauge/gauge.component';
-import { GeomapComponent } from './geomap/geomap.component';
+
+ import { VectormapComponent } from './vectormap/vectormap.component';
+import { DxVectorMapModule } from 'devextreme-angular';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchbarComponent,
     GaugeComponent,
-    GeomapComponent
+    VectormapComponent
   ],
   imports: [
     BrowserModule,
+    DxVectorMapModule,
     HttpClientModule,
     FormsModule,
     NgxGaugeModule

@@ -1,3 +1,9 @@
+<div class="dx-viewport">
+  <div class="demo-container">
+    <app-vectormap>Loading...</app-vectormap>
+  </div>
+</div>
+
 <div>
   <input  class = "searchbar" type = "text" [(ngModel)] ="countryName" (keyup.enter) = "getCitySpecificDetails()"  placeholder="Which place do you wanna search ?">
   <span class="highlight"></span>
@@ -10,11 +16,4 @@
 <app-gauge [resAQIUS]="resAQIUS" ></app-gauge>
 
 
-<h2>{{tt}}</h2>
-<!-- <ul *ngFor = "let d of results">
-    <li>{{d.city}}</li>
-
-</ul> -->
-
-<!-- <li>{{data.city}}</li> -->
 
