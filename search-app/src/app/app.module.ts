@@ -8,12 +8,14 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
 import { SearchService } from './search.service';
 import { NgxGaugeModule } from 'ngx-gauge';
 import { GaugeComponent } from './gauge/gauge.component';
+import { GeomapComponent } from './geomap/geomap.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchbarComponent,
-    GaugeComponent
+    GaugeComponent,
+    GeomapComponent
   ],
   imports: [
     BrowserModule,
