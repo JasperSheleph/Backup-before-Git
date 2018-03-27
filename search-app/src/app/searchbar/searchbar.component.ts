@@ -32,7 +32,7 @@ export class SearchbarComponent implements OnInit {
       } 
       console.log(this.results[1].current.pollution.aqius);
       console.log(this.results[1].state);
-      this.resAQIUS  = this.results[1].current.pollution.aqius;
+     this.resAQIUS  = this.results[1].current.pollution.aqius;
     },
     (error) => console.log("Error : " + error));                                                             
   }
