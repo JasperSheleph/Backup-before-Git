@@ -8,20 +8,21 @@ import { SearchService } from '../search.service';
 })
 export class GaugeComponent implements OnInit {
 
-  @Input() resAQIUS;
+
+  @Input() resAQIUS: number;
 
   constructor(private searchService : SearchService) { }
 
-  gaugeType = "full";
-  gaugeValue = 47.4;
+  gaugeType = "arch";
+  gaugeValue = this.resAQIUS;
   gaugeLabel = "Index";
   gaugeAppendText = "";
 
-  public displayGaugeComp () {
-
-    console.log(this.resAQIUS);
-    
-  }
+  thresholdConfig = {
+    '0': {color: 'green'},
+    '40': {color: 'orange'},
+    '75.5': {color: 'red'}
+};
 
   ngOnInit() {
 

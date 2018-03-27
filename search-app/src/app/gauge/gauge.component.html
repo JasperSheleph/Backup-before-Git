@@ -1,11 +1,16 @@
-<p>
-  gauge works!
-</p>
 
-
-<ngx-gauge [type]="gaugeType" 
-           [value]="gaugeValue"
+<div *ngIf = "resAQIUS" class="gaugeDash">
+ 
+  <ngx-gauge 
+           [type]="gaugeType" 
+           [value]="resAQIUS"
            [label]="gaugeLabel" 
            [append]="gaugeAppendText"
-           cap = "round">
-</ngx-gauge>
+           cap = "round"
+           [thick]=10
+           [size]=150
+           [thresholds]="thresholdConfig"
+           >
+  </ngx-gauge>
+
+</div>

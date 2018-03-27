@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../search.service';
 import { Results } from '../results'
 import { from } from 'rxjs/observable/from';
-import { GaugeComponent } from '../gauge/gauge.component';
 
 
 
@@ -20,7 +19,7 @@ export class SearchbarComponent implements OnInit {
   public stateName : string = "California";
   public cityName : string = "Los Angeles";
 
-  //public _resAQIUS : number ;
+  public resAQIUS : number ;
  
   constructor(private searchService : SearchService) { }
 
@@ -33,7 +32,7 @@ export class SearchbarComponent implements OnInit {
       } 
       console.log(this.results[1].current.pollution.aqius);
       console.log(this.results[1].state);
-     // _resAQIUS  = this.results[1].current.pollution.aqius;
+      this.resAQIUS  = this.results[1].current.pollution.aqius;
     },
     (error) => console.log("Error : " + error));                                                             
   }

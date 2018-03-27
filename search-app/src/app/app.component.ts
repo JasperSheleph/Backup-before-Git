@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-// import { SearchbarComponent } from './searchbar/searchbar.component';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Search Your Place !';
+  
 }

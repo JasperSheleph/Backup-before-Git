@@ -9,7 +9,6 @@ import { SearchService } from './search.service';
 import { NgxGaugeModule } from 'ngx-gauge';
 import { GaugeComponent } from './gauge/gauge.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
