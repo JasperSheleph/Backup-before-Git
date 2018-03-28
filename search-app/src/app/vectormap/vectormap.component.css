@@ -1,0 +1,9 @@
+:host >>> .vector-map{
+    flex : 1;
+}
+
+.homepage{
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}

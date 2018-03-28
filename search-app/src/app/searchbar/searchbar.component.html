@@ -1,15 +1,8 @@
-
-    <app-vectormap>Loading...</app-vectormap>
- 
-
-<div>
-  <input  class = "searchbar" type = "text" [(ngModel)] ="countryName" (keyup.enter) = "getCitySpecificDetails()"  placeholder="Which place do you wanna search ?">
+<div class="search-bar">
+  <input class="searchbar" type = "text" [(ngModel)] ="countryName" (keyup.enter) = "getCitySpecificDetails()"  placeholder="Which place do you wanna search ?">
   <span class="highlight"></span>
   <span class="bar"></span>
-  
 </div>
-
-<h2> Results </h2>
 
 <app-gauge [resAQIUS]="resAQIUS" ></app-gauge>
 

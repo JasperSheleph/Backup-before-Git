@@ -17,9 +17,9 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 @NgModule({
   declarations: [
     AppComponent,
+    VectormapComponent,
     SearchbarComponent,
-    GaugeComponent,
-    VectormapComponent
+    GaugeComponent
   ],
   imports: [
     BrowserModule,

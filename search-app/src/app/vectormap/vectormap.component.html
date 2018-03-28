@@ -1,24 +1,32 @@
+    <!-- <dxo-background id="vector-map" 
+    borderColor = "black"></dxo-background> -->
+<div class="homepage">
+<app-searchbar></app-searchbar>
 <dx-vector-map 
-    id="vector-map" 
-    [bounds]="[-180, 85, 180, -60]">
-    <dxo-background id="vector-map" 
-    borderColor = "black"></dxo-background>
-    <dxo-size
-    width=auto
-    height=auto></dxo-size>
+    class="vector-map" 
+    [bounds]="[-180, 85, 180, -60]"
+    [wheelEnabled]="false">
+    
     <dxo-tooltip 
         [enabled]="true" 
         [customizeTooltip]="customizeTooltip"></dxo-tooltip>
-    <dxi-layer id="vector-map" 
+        
+    <dxi-layer 
         name="areas" 
         palette="Violet" 
         colorGroupingField="population"
         [colorGroups]="[0, 0.5, 0.8, 1, 2, 3, 100]"
         [dataSource]="worldMap"
         [customize]="customizeLayers"></dxi-layer>
-
+        
+    <dxo-control-bar
+    [horizontalAlignment]="right"
+    [borderColor]="green"
+    [color]="green"
+    [margin]="20"
+    [enabled]="true"></dxo-control-bar>
     <!-- <dxi-legend [customizeText]="customizeText">
         <dxo-source layer="areas" grouping="color"></dxo-source>
     </dxi-legend> -->
 </dx-vector-map>
-
+</div>
