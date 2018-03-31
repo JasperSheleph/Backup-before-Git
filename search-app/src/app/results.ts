@@ -1,5 +1,6 @@
 export class Results{
-
+    
+    data : any;
     status : string;
 
     city : string;

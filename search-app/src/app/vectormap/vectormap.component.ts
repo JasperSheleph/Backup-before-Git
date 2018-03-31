@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../search.service';
+import { DxVectorMapModule } from 'devextreme-angular';
 import * as mapsData from 'devextreme/dist/js/vectormap-data/world.js';
+import vector_map from 'devextreme/viz/vector_map';
 
 
 @Component({
@@ -10,8 +12,10 @@ import * as mapsData from 'devextreme/dist/js/vectormap-data/world.js';
 })
 export class VectormapComponent implements OnInit {
 
+
   worldMap: any = mapsData.world;
   populations: Object;
+
 
   constructor(private searchService : SearchService) {
       this.populations = searchService.getPopulations();
@@ -26,11 +30,14 @@ export class VectormapComponent implements OnInit {
       }
   }
 
-  customizeLayers(elements) {
-      elements.forEach((element) => {
-          element.attribute("population", this.populations[element.attribute("name")]);
-      });
+  customizeLayers(elements) {  
+      elements.forEach(
+          (element) => { 
+           element.attribute("population", this.populations[element.attribute("name")]);
+          }
+    );
   }
+
 
   customizeText(arg) {
       let text;
@@ -44,7 +51,31 @@ export class VectormapComponent implements OnInit {
       return text;
   }
 
+  click(e) {
+    let target = e.target;
+    // console.log(target.attribute("name"));
+
+    if(target && this.populations[target.attribute("name")]) {
+        
+            var vm = e.component;
+            var coordinates = vm.convertCoordinates(e.event.x,e.event.y);
+            vm.center(coordinates).zoomFactor(3);
+            target.selected(!target.selected());
+        
+        target.selected(!target.selected());
+    }
+    else{
+        console.log("Please Click Highlighted Area You Fool !");
+    }
+}
+
+
   ngOnInit() {
+    // this.searchService.getCountriesList().subscribe(
+    //     res => { 
+    //          for (let i=0;i<res.data.length; i++)
+    //          console.log(typeof(res.data));
+    //     });
   }
 
 }

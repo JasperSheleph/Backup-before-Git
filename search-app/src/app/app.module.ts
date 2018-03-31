@@ -10,7 +10,7 @@ import { NgxGaugeModule } from 'ngx-gauge';
 import { GaugeComponent } from './gauge/gauge.component';
 
  import { VectormapComponent } from './vectormap/vectormap.component';
-import { DxVectorMapModule } from 'devextreme-angular';
+ import { DxVectorMapModule } from 'devextreme-angular';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 

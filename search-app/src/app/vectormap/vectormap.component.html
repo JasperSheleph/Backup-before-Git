@@ -5,7 +5,9 @@
 <dx-vector-map 
     class="vector-map" 
     [bounds]="[-180, 85, 180, -60]"
-    [wheelEnabled]="false">
+    [wheelEnabled]="false"
+    [redrawOnResize]="true"
+    (onClick)="click($event)">
     
     <dxo-tooltip 
         [enabled]="true" 

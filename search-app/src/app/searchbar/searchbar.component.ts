@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../search.service';
-import { Results } from '../results'
+import { Results } from '../results';
+import { countrystructure } from '../countrystructure';
 import { from } from 'rxjs/observable/from';
 
 
@@ -14,7 +15,7 @@ import { from } from 'rxjs/observable/from';
 
 export class SearchbarComponent implements OnInit {
 
-  public results : Results[] = [];
+  public results : Results[] = []; 
   public countryName : string;
   public stateName : string = "California";
   public cityName : string = "Los Angeles";
