@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../search.service';
 import { Results } from '../results';
-import { countrystructure } from '../countrystructure';
 import { from } from 'rxjs/observable/from';
 
 

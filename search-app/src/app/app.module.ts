@@ -12,6 +12,7 @@ import { GaugeComponent } from './gauge/gauge.component';
  import { VectormapComponent } from './vectormap/vectormap.component';
  import { DxVectorMapModule } from 'devextreme-angular';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
     AppComponent,
     VectormapComponent,
     SearchbarComponent,
-    GaugeComponent
+    GaugeComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
