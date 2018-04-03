@@ -2,16 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgxGaugeModule } from 'ngx-gauge';
+import { DxVectorMapModule } from 'devextreme-angular';
+import { SidebarModule } from 'ng-sidebar';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppComponent } from './app.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
-import { SearchService } from './search.service';
-import { NgxGaugeModule } from 'ngx-gauge';
+import { VectormapComponent } from './vectormap/vectormap.component';
 import { GaugeComponent } from './gauge/gauge.component';
-
- import { VectormapComponent } from './vectormap/vectormap.component';
- import { DxVectorMapModule } from 'devextreme-angular';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { SearchService } from './search.service';
 import { SidenavComponent } from './sidenav/sidenav.component';
 
 
@@ -28,7 +28,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     DxVectorMapModule,
     HttpClientModule,
     FormsModule,
-    NgxGaugeModule
+    NgxGaugeModule,
+    SidebarModule.forRoot()
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]
