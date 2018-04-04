@@ -35,7 +35,7 @@ export class SearchbarComponent implements OnInit {
      this.resAQIUS  = this.results[1].current.pollution.aqius;
     },
     (error) => console.log("Error : " + error));                                                             
-  }
+  } 
   
   ngOnInit() {
   }

@@ -6,6 +6,9 @@ import { NgxGaugeModule } from 'ngx-gauge';
 import { DxVectorMapModule } from 'devextreme-angular';
 import { SidebarModule } from 'ng-sidebar';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatListModule,MatButtonModule } from '@angular/material';
+import {A11yModule} from '@angular/cdk/a11y';
 
 import { AppComponent } from './app.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
@@ -25,6 +28,10 @@ import { SidenavComponent } from './sidenav/sidenav.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    MatListModule,
+    MatButtonModule,
+    A11yModule,
     DxVectorMapModule,
     HttpClientModule,
     FormsModule,

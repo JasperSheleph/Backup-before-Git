@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../search.service';
+import { Results } from '../results';
+
 
 @Component({
   selector: 'app-sidenav',
@@ -7,9 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavComponent{
 
-  private _opened: boolean = false;
+  public _countryResults :  Results[]=[];
+  private _opened: boolean = true;
   private _modeNum: number = 1;
-  private _positionNum: number = 0;
+  private _positionNum: number = 1;
   private _dock: boolean = false;
   private _closeOnClickOutside: boolean = false;
   private _closeOnClickBackdrop: boolean = false;
@@ -35,6 +39,8 @@ export class SidenavComponent{
       this._modeNum = 0;
     }
   }
+
+  constructor(private searchService : SearchService){}
 
   private _toggleAutoCollapseHeight(): void {
     this._autoCollapseHeight = this._autoCollapseHeight ? null : 500;
@@ -85,6 +91,13 @@ export class SidenavComponent{
   }
 
   private _onOpenStart(): void {
+     this.searchService.getCountriesList().subscribe(
+        (res) => { 
+             for (let i=0;i<res.data.length; i++) {
+              this._countryResults.push(res.data[i].country);
+            //  console.log(this._countryResults[i]);
+             }
+        });
     console.info('Sidebar opening');
   }
 

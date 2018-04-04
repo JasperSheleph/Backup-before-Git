@@ -1,0 +1,11 @@
+.ng-sidebar-container{
+    height : 100vh;
+}
+
+:host >>> .ng-sidebar {
+    width: 20%;  
+  }
+
+/* :host >>> .ng-sidebar-content{
+    width: 10vh;
+} */

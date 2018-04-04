@@ -1,7 +1,6 @@
     <!-- <dxo-background id="vector-map" 
     borderColor = "black"></dxo-background> -->
-<div class="homepage">
-<app-searchbar></app-searchbar>
+<div class="map">
 <dx-vector-map 
     class="vector-map" 
     [bounds]="[-180, 85, 180, -60]"
@@ -20,13 +19,16 @@
         [colorGroups]="[0, 0.5, 0.8, 1, 2, 3, 100]"
         [dataSource]="worldMap"
         [customize]="customizeLayers"></dxi-layer>
-        
+    
+   
     <dxo-control-bar
     [horizontalAlignment]="right"
-    [borderColor]="green"
-    [color]="green"
+    [verticalAlignment]="bottom"
+    [borderColor]="red"
+    [color]="red"
     [margin]="20"
     [enabled]="true"></dxo-control-bar>
+  
     <!-- <dxi-legend [customizeText]="customizeText">
         <dxo-source layer="areas" grouping="color"></dxo-source>
     </dxi-legend> -->
