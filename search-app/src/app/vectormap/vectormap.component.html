@@ -3,9 +3,11 @@
 <div class="map">
 <dx-vector-map 
     class="vector-map" 
-    [bounds]="[-180, 85, 180, -60]"
+    [bounds]="[-220, 85, 220, -70]"
     [wheelEnabled]="false"
     [redrawOnResize]="true"
+    [zoomFactor]="1"
+    [maxZoomFactor]="5"
     (onClick)="click($event)">
     
     <dxo-tooltip 
