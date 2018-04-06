@@ -29,7 +29,7 @@
  
        <mat-nav-list>
           <mat-list-item *ngFor="let countries of _countryResults" tabindex="-1">
-             <button mat-button>
+             <button mat-button (click)="countryListClicked(countries)">
                 {{countries}}
              </button>
           </mat-list-item>

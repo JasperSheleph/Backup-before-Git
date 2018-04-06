@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { SearchService } from '../search.service';
 import { Results } from '../results';
 
@@ -10,10 +10,12 @@ import { Results } from '../results';
 })
 export class SidenavComponent{
 
+  @Output() onCountryListClicked = new EventEmitter<any>();
+
   public _countryResults :  Results[]=[];
   private _opened: boolean = true;
   private _modeNum: number = 1;
-  private _positionNum: number = 1;
+  private _positionNum: number = 0;
   private _dock: boolean = false;
   private _closeOnClickOutside: boolean = false;
   private _closeOnClickBackdrop: boolean = false;
@@ -27,6 +29,11 @@ export class SidenavComponent{
 
   private _MODES: Array<string> = ['over', 'push', 'slide'];
   private _POSITIONS: Array<string> = ['left', 'right', 'top', 'bottom'];
+
+  countryListClicked(e: any){
+    this.onCountryListClicked.emit(e);
+    console.log(e);
+  }
 
   private _toggleOpened(): void {
     this._opened = !this._opened;

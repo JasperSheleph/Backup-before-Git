@@ -53,7 +53,7 @@ export class VectormapComponent implements OnInit {
 
   click(e) {
     let target = e.target;
-    // console.log(target.attribute("name"));
+     console.log(target);
 
     if(target && this.populations[target.attribute("name")]) {
         
