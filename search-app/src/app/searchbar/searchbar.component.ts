@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
 import { SearchService } from '../search.service';
 import { Results } from '../results';
 import { from } from 'rxjs/observable/from';
@@ -20,6 +20,8 @@ export class SearchbarComponent implements OnInit {
   public cityName : string = "Los Angeles";
 
   public resAQIUS : number ;
+
+  @Output() _countryName: EventEmitter<string> = new EventEmitter<string>();
  
   constructor(private searchService : SearchService) { }
 
@@ -36,6 +38,11 @@ export class SearchbarComponent implements OnInit {
     },
     (error) => console.log("Error : " + error));                                                             
   } 
+
+  public onTyped(){
+    this._countryName.emit(this.countryName);
+    //  console.log(this.countryName);
+  }
   
   ngOnInit() {
   }

@@ -65,7 +65,9 @@ export class VectormapComponent implements OnInit {
         target.selected(!target.selected());
     }
     else{
-        console.log("Please Click Highlighted Area You Fool !");
+        var vm = e.component;
+        vm.center(100,100).zoomFactor(1);
+        // console.log("Please Click Highlighted Area You Fool !");
     }
 }
 

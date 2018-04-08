@@ -16,6 +16,7 @@ import { VectormapComponent } from './vectormap/vectormap.component';
 import { GaugeComponent } from './gauge/gauge.component';
 import { SearchService } from './search.service';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { SearchfilterPipe } from './searchfilter.pipe';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     VectormapComponent,
     SearchbarComponent,
     GaugeComponent,
-    SidenavComponent
+    SidenavComponent,
+    SearchfilterPipe
   ],
   imports: [
     BrowserModule,

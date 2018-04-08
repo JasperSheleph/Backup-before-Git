@@ -1,6 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { SearchService } from '../search.service';
 import { Results } from '../results';
+
 
 
 @Component({
@@ -10,7 +11,7 @@ import { Results } from '../results';
 })
 export class SidenavComponent{
 
-  @Output() onCountryListClicked = new EventEmitter<any>();
+  public newCountryName : string;
 
   public _countryResults :  Results[]=[];
   private _opened: boolean = true;
@@ -29,11 +30,14 @@ export class SidenavComponent{
 
   private _MODES: Array<string> = ['over', 'push', 'slide'];
   private _POSITIONS: Array<string> = ['left', 'right', 'top', 'bottom'];
+ 
+  @Input() _countryName: string;
 
-  countryListClicked(e: any){
-    this.onCountryListClicked.emit(e);
-    console.log(e);
+  public setSearchValue(recievedCountryName : string ){
+    // let newCountryName = recievedCountryName;
+    console.log(recievedCountryName);
   }
+
 
   private _toggleOpened(): void {
     this._opened = !this._opened;
