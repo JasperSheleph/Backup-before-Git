@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { SearchService } from '../search.service';
 import { DxVectorMapModule } from 'devextreme-angular';
 import * as mapsData from 'devextreme/dist/js/vectormap-data/world.js';
@@ -12,6 +12,7 @@ import vector_map from 'devextreme/viz/vector_map';
 })
 export class VectormapComponent implements OnInit {
 
+@Output() _countryName: EventEmitter<string> = new EventEmitter<string>();
 
   worldMap: any = mapsData.world;
   populations: Object;
@@ -53,10 +54,12 @@ export class VectormapComponent implements OnInit {
 
   click(e) {
     let target = e.target;
-     console.log(target);
+    //  console.log(target);
 
     if(target && this.populations[target.attribute("name")]) {
-        
+
+            this._countryName.emit(target.attribute("name"));
+            // console.log(target.attribute("name"));
             var vm = e.component;
             var coordinates = vm.convertCoordinates(e.event.x,e.event.y);
             vm.center(coordinates).zoomFactor(3);
@@ -65,6 +68,7 @@ export class VectormapComponent implements OnInit {
         target.selected(!target.selected());
     }
     else{
+        this._countryName.emit("");
         var vm = e.component;
         vm.center(100,100).zoomFactor(1);
         // console.log("Please Click Highlighted Area You Fool !");

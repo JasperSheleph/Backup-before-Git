@@ -31,11 +31,11 @@ export class SidenavComponent{
   private _MODES: Array<string> = ['over', 'push', 'slide'];
   private _POSITIONS: Array<string> = ['left', 'right', 'top', 'bottom'];
  
-  @Input() _countryName: string;
+  @Input() _receivedCountryName: string;
 
-  public setSearchValue(recievedCountryName : string ){
-    // let newCountryName = recievedCountryName;
-    console.log(recievedCountryName);
+  _countryName(recievedCountryName : string ){
+    this._receivedCountryName = recievedCountryName;
+    // console.log(recievedCountryName);
   }
 
 

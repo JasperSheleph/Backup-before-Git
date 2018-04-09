@@ -23,24 +23,24 @@
       (onClosed)="_onClosed()"
       (onTransitionEnd)="_onTransitionEnd()">
       <!-- <h4>Countries</h4> -->
-      <app-searchbar tabindex="-1" (_countryName)="setSearchValue($event)"></app-searchbar>
+      <app-searchbar tabindex="-1" (_countryName)="_countryName($event)"></app-searchbar>
       <!-- <button class="demo-control" (click)="_toggleOpened()">Close sidebar</button> -->
       <!-- <p><a closeSidebar>This will close the sidebar too</a></p> -->
  
        <mat-nav-list>
-          <mat-list-item *ngFor="let countries of _countryResults | searchfilter: newCountryName" tabindex="-1">
-             <button mat-button>
-                {{countries}}
-             </button>
+          <mat-list-item *ngFor="let countries of _countryResults | searchfilter: _receivedCountryName" tabindex="-1">
+             <!-- <button mat-button> -->
+                {{countries | uppercase}}
+             <!-- </button> -->
           </mat-list-item>
-        </mat-nav-list>
+      </mat-nav-list>
+
     </ng-sidebar>
-    
-    
+       
     <div ng-sidebar-content>
 
             <!-- <button (click)="_toggleOpened()" class="demo-header__toggle">Toggle sidebar</button>   -->
-        <app-vectormap></app-vectormap>
+        <app-vectormap (_countryName)="_countryName($event)"></app-vectormap>
         
     </div>
     </ng-sidebar-container>
