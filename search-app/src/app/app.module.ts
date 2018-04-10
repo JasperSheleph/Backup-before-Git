@@ -8,7 +8,8 @@ import { SidebarModule } from 'ng-sidebar';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule,MatButtonModule } from '@angular/material';
-import {A11yModule} from '@angular/cdk/a11y';
+import { A11yModule } from '@angular/cdk/a11y';
+
 
 import { AppComponent } from './app.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
@@ -17,6 +18,7 @@ import { GaugeComponent } from './gauge/gauge.component';
 import { SearchService } from './search.service';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { SearchfilterPipe } from './searchfilter.pipe';
+
 
 
 @NgModule({

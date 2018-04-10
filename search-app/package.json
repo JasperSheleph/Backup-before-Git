@@ -31,6 +31,7 @@
     "devextreme-angular": "^17.2.7",
     "jquery": "^3.3.1",
     "mdbootstrap": "^4.5.0",
+    "ng-a11y": "0.0.13",
     "ng-sidebar": "^7.1.0",
     "ng2-googlechart": "^2.11.0",
     "ngx-gauge": "^1.0.0-beta.4",
