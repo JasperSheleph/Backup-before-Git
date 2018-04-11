@@ -3,7 +3,7 @@
 }
 
 :host >>> .ng-sidebar {
-    width: 17%;  
+    width: 12%;  
   }
 
 /* :host >>> .ng-sidebar-content{
@@ -25,4 +25,5 @@ mat-list-item.material-list-items{
 
 :host >>> .ng-sidebar{
     background-color:#673AB7;
+    min-width: 12%;
 }

@@ -1,11 +1,11 @@
 :host >>> .vector-map{
-    min-height: 88vh;
+    min-height: 90vh;
     height: 100%;
     width : 100%;
 
 }
 
 .map{
-    width:83%;
+    width:88%;
     height:100%;
 }

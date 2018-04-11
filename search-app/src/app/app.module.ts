@@ -9,7 +9,9 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule,MatButtonModule } from '@angular/material';
 import { A11yModule } from '@angular/cdk/a11y';
-
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
 import { AppComponent } from './app.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
@@ -40,9 +42,12 @@ import { SearchfilterPipe } from './searchfilter.pipe';
     HttpClientModule,
     FormsModule,
     NgxGaugeModule,
-    SidebarModule.forRoot()
+    SidebarModule.forRoot(),
+    PerfectScrollbarModule
   ],
-  providers: [SearchService],
+  providers: [SearchService,
+    {provide: PERFECT_SCROLLBAR_CONFIG,
+    useValue: PERFECT_SCROLLBAR_CONFIG}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

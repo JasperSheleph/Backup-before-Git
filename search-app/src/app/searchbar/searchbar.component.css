@@ -9,11 +9,11 @@
   }
   input {
     font-size: 12px;
-    padding: 10px 0px 10px 0px; 
+    padding: 10px 5px 10px 0px; 
     display: block;
     width: 100%;
     border: none;
-    border-bottom: 1px solid #757575;
+    border-bottom: 1px solid #673AB7;
     text-align: center;
   }
   input:focus {
