@@ -1,9 +1,7 @@
 <form>
-<div class="search-bar">
   <input class="searchbar" type = "text" [(ngModel)] ="countryName" (keyup)="onTyped()" (keyup.enter) = "getCitySpecificDetails()"  placeholder="Which place do you wanna search ?" name="search">
   <span class="highlight"></span>
   <span class="bar"></span>
-</div>
 </form>
 
 <app-gauge [resAQIUS]="resAQIUS" ></app-gauge>

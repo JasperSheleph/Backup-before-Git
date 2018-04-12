@@ -15,7 +15,7 @@ export class SidenavComponent{
 
   public _countryResults :  Results[]=[];
   private _opened: boolean = true;
-  private _modeNum: number = 1;
+  private _modeNum: number = 0;
   private _positionNum: number = 0;
   private _dock: boolean = false;
   private _closeOnClickOutside: boolean = false;

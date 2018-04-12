@@ -1,18 +1,13 @@
-.ng-sidebar-container{
-    height : 100vh;
-}
-
 :host >>> .ng-sidebar {
-    width: 12%;  
+    background-color:#a9789f;
+    min-width: 10%;
+    width : 12%;
+    max-height: 100vh;
   }
 
-/* :host >>> .ng-sidebar-content{
-    width: 10vh;
-} */
-
 mat-nav-list.material-list{
-    background-color:#673AB7;
-   
+    position: relative;
+    background-color:#994e8a;  
 }
 
 mat-list-item.material-list-items{
@@ -20,10 +15,6 @@ mat-list-item.material-list-items{
     font-family: 'Roboto', sans-serif;
     font-size : 14px;
     padding: 0%;
-    
-}
 
-:host >>> .ng-sidebar{
-    background-color:#673AB7;
-    min-width: 12%;
+
 }

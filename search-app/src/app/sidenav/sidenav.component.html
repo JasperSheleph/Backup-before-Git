@@ -26,8 +26,9 @@
       <!-- <app-searchbar tabindex="-1" (_countryName)="_countryName($event)"></app-searchbar> -->
       <!-- <button class="demo-control" (click)="_toggleOpened()">Close sidebar</button> -->
       <!-- <p><a closeSidebar>This will close the sidebar too</a></p> -->
-      
-      <perfect-scrollbar [config]="config">
+    <!-- <button (click)="_toggleOpened()" class="demo-header__toggle">Toggle sidebar</button>    -->
+    
+    <perfect-scrollbar [config]="config">
      <mat-nav-list class="material-list">
           <mat-list-item class="material-list-items"*ngFor="let countries of _countryResults | searchfilter: _receivedCountryName" tabindex="-1">
              <!-- <button mat-button> -->
@@ -43,7 +44,8 @@
     <div ng-sidebar-content>
 
             <!-- <button (click)="_toggleOpened()" class="demo-header__toggle">Toggle sidebar</button>   -->
-        <app-vectormap (_countryName)="_countryName($event)"></app-vectormap>
+           
+      <app-vectormap (_countryName)="_countryName($event)"></app-vectormap>
         
     </div>
-    </ng-sidebar-container>
+  </ng-sidebar-container>

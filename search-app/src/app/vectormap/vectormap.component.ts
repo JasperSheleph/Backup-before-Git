@@ -35,6 +35,14 @@ export class VectormapComponent implements OnInit {
       elements.forEach(
           (element) => { 
            element.attribute("population", this.populations[element.attribute("name")]);
+           let country = this.populations[element.attribute("name")];
+           if(country) {
+               element.applySettings({
+                   color: country.color,
+                   hoveredColor: "#c976b8",
+                //    selectedColor: "#6b0958"
+               });
+           };
           }
     );
   }
@@ -57,15 +65,13 @@ export class VectormapComponent implements OnInit {
     //  console.log(target);
 
     if(target && this.populations[target.attribute("name")]) {
-
+            target.selected(!target.selected());
             this._countryName.emit(target.attribute("name"));
             // console.log(target.attribute("name"));
             var vm = e.component;
             var coordinates = vm.convertCoordinates(e.event.x,e.event.y);
             vm.center(coordinates).zoomFactor(3);
             target.selected(!target.selected());
-        
-        target.selected(!target.selected());
     }
     else{
         this._countryName.emit("");

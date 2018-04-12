@@ -1,20 +1,29 @@
-.search-bar{
+.searchbar{
+  max-width: 100%;
   width: 100%;
 }
   /* form starting stylings ------------------------------- */
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #ffffff;
+    opacity: 1; /* Firefox */
+}
   .group {
     position: relative;
     margin-bottom: 45px;
     margin-top: 5px;
   }
   input {
-    font-size: 12px;
-    padding: 10px 5px 10px 0px; 
+    color : #ffffff;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    padding: 8px 0px 8px 0px; 
     display: block;
     width: 100%;
     border: none;
-    border-bottom: 1px solid #673AB7;
+    border-bottom: 1px solid #994e8a;
     text-align: center;
+    background-color: #994e8a;
   }
   input:focus {
     outline: none;
@@ -22,7 +31,7 @@
   
   /* LABEL ======================================= */
   label {
-    color: #999;
+    color: #ffffff;
     font-size: 18px;
     font-weight: normal;
     position: absolute;
@@ -39,7 +48,7 @@
   input:valid ~ label {
     top: -20px;
     font-size: 14px;
-    color: #5264ae;
+    color: #ffffff;
   }
   
   /* BOTTOM BARS ================================= */
@@ -55,7 +64,7 @@
     width: 0;
     bottom: 1px;
     position: absolute;
-    background: #5264ae;
+    background: #c976b8;
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;
@@ -85,7 +94,7 @@
   /* ANIMATIONS ================ */
   @-webkit-keyframes inputHighlighter {
     from {
-      background: #5264ae;
+      background: #ffffff;
     }
     to {
       width: 0;
@@ -94,7 +103,7 @@
   }
   @-moz-keyframes inputHighlighter {
     from {
-      background: #5264ae;
+      background: #ffffff;
     }
     to {
       width: 0;
@@ -103,7 +112,7 @@
   }
   @keyframes inputHighlighter {
     from {
-      background: #5264ae;
+      background: #ffffff;
     }
     to {
       width: 0;
