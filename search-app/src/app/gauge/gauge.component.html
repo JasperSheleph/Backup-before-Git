@@ -1,6 +1,6 @@
 
-<div *ngIf = "resAQIUS" class="gaugeDash">
- 
+<!-- <div *ngIf = "resAQIUS" class="gaugeDash"> -->
+
   <ngx-gauge 
            [type]="gaugeType" 
            [value]="resAQIUS"
@@ -13,4 +13,15 @@
            >
   </ngx-gauge>
 
-</div>
+  <ngx-gauge 
+           [type]="gaugeType" 
+           [value]="resAQIUS"
+           [label]="gaugeLabel" 
+           [append]="gaugeAppendText"
+           cap = "round"
+           [thick]=10
+           [size]=150
+           [thresholds]="thresholdConfig"
+           >
+  </ngx-gauge>
+

@@ -9,19 +9,20 @@ import { SearchService } from '../search.service';
 export class GaugeComponent implements OnInit {
 
 
-  @Input() resAQIUS: number;
+  // @Input() resAQIUS: number;
 
   constructor(private searchService : SearchService) { }
 
   gaugeType = "arch";
-  gaugeValue = this.resAQIUS;
+  // gaugeValue = this.resAQIUS;
+  gaugeValue = 55;
   gaugeLabel = "Index";
   gaugeAppendText = "";
 
   thresholdConfig = {
-    '0': {color: 'green'},
-    '40': {color: 'orange'},
-    '75.5': {color: 'red'}
+    '0': {color: 'white'},
+    '40': {color: 'white'},
+    '75.5': {color: 'white'}
 };
 
   ngOnInit() {

@@ -12,6 +12,7 @@ import { A11yModule } from '@angular/cdk/a11y';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { AppComponent } from './app.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
@@ -43,6 +44,7 @@ import { SearchfilterPipe } from './searchfilter.pipe';
     FormsModule,
     NgxGaugeModule,
     SidebarModule.forRoot(),
+    FlexLayoutModule,
     PerfectScrollbarModule
   ],
   providers: [SearchService,

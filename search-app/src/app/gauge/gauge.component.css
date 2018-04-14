@@ -1,7 +1,24 @@
 .ngx-gauge-meter{
-    background-color: rgb(255, 255, 255);
+    /* background-color: #994e8a; */
+    align-content: center;
+    margin-left: 12%;
+    color : white;
+    padding-top: 0px;
+    
 }
+
+/* .gaugeDash{
+    background-color: #994e8a;
+    height : 100%;
+    width : 500px;
+} */
 
 .reading-affix{
     font-size: 0.3em;
+}
+
+:host{
+    height : 100%;
+    width : 100%;
+    background-color: #994e8a;
 }
