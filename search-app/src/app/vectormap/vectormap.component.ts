@@ -83,11 +83,7 @@ export class VectormapComponent implements OnInit {
 
 
   ngOnInit() {
-    // this.searchService.getCountriesList().subscribe(
-    //     res => { 
-    //          for (let i=0;i<res.data.length; i++)
-    //          console.log(typeof(res.data));
-    //     });
+
   }
 
 }

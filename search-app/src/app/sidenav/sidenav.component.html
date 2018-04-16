@@ -26,38 +26,54 @@
       <!-- <app-searchbar tabindex="-1" (_countryName)="_countryName($event)"></app-searchbar> -->
       <!-- <button class="demo-control" (click)="_toggleOpened()">Close sidebar</button> -->
       <!-- <p><a closeSidebar>This will close the sidebar too</a></p> -->
-    <button (click)="_toggleOpened()" class="demo-header__toggle">Toggle sidebar</button>   
+    <!-- <button (click)="_toggleOpened()" class="demo-header__toggle">Toggle sidebar</button>    -->
     
-    <perfect-scrollbar [config]="config">
-     <mat-nav-list class="material-list">
+    <perfect-scrollbar [config]="config">  
+      
+        <mat-expansion-panel (click)="fetchStateList_Toggle"  *ngFor="let countries of _countryResults | searchfilter: _receivedCountryName" tabindex="-1">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                  {{countries}}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+          
+
+            <p *ngIf="fetchStateList">This is the primary content of the panel.</p>
+          
+          </mat-expansion-panel>
+          
+     <!-- <mat-nav-list class="material-list">
           <mat-list-item class="material-list-items"*ngFor="let countries of _countryResults | searchfilter: _receivedCountryName" tabindex="-1">
-             <!-- <button mat-button> -->
                     {{countries}}
-                <!-- <mat-divider></mat-divider> -->
-             <!-- </button> -->
           </mat-list-item>
-      </mat-nav-list>
+      </mat-nav-list> -->
+
     </perfect-scrollbar>
 
     </ng-sidebar>
        
     <div ng-sidebar-content>
 
-      <div class="container"
-     fxLayout
+   <!-- <app-searchbar (_countryName)="_countryName($event)"></app-searchbar> -->
+
+    <div class="map-container"
+     fxLayout="row"
      fxLayout.xs="column"
      fxLayoutAlign="center"
      fxLayoutGap.xs="0">
 
-     <app-vectormap (_countryName)="_countryName($event)" fxFlex="100%"></app-vectormap> 
+     <app-vectormap tabindex="-1" (_countryName)="_countryName($event)" fxFlex="100%"></app-vectormap> 
 
      </div>
 
-     <div class="container"
+     <div class="dashboard-container"
      fxLayout
      fxLayout.xs="column"
      fxLayoutGap.xs="0">
-     <app-gauge fxFlex="100%"></app-gauge>
+     <div fxFlex="16%"></div>
+     <div fxFlex="100%">
+     <app-gauge></app-gauge>
+     </div> 
      </div>
       
      <!-- <button (click)="_toggleOpened()" class="demo-header__toggle">Toggle sidebar</button>   -->

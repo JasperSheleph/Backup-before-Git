@@ -16,6 +16,18 @@ mat-list-item.material-list-items{
     font-family: 'Roboto', sans-serif;
     font-size : 14px;
     padding: 0%;
+}
 
+.dashboard-container{
+    background-color:#994e8a;  
+    width : 100%;
+    height : 100%; 
+}
 
+mat-expansion-panel{
+    background-color:#994e8a;    
+}
+
+mat-panel-title{
+    color : white;
 }

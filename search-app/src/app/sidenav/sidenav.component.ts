@@ -12,6 +12,7 @@ import { Results } from '../results';
 export class SidenavComponent{
 
   public newCountryName : string;
+  fetchStateList : boolean;
 
   public _countryResults :  Results[]=[];
   private _opened: boolean = true;
@@ -33,11 +34,15 @@ export class SidenavComponent{
  
   @Input() _receivedCountryName: string;
 
+
   _countryName(recievedCountryName : string ){
     this._receivedCountryName = recievedCountryName;
-    // console.log(recievedCountryName);
+      console.log(recievedCountryName);
   }
 
+  fetchStateList_Toggle(){
+    this.fetchStateList = true;
+  }
 
   private _toggleOpened(): void {
     this._opened = !this._opened;
@@ -51,7 +56,9 @@ export class SidenavComponent{
     }
   }
 
-  constructor(private searchService : SearchService){}
+  constructor(private searchService : SearchService){
+    let fetchStateList = false;
+  }
 
   private _toggleAutoCollapseHeight(): void {
     this._autoCollapseHeight = this._autoCollapseHeight ? null : 500;

@@ -41,7 +41,7 @@ export class SearchbarComponent implements OnInit {
 
   public onTyped(){
     this._countryName.emit(this.countryName);
-    //  console.log(this.countryName);
+    //  console.log("In Searchbar : "+this.countryName);
   }
   
   ngOnInit() {
