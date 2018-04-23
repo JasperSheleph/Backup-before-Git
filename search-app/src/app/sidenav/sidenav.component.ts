@@ -12,9 +12,10 @@ import { Results } from '../results';
 export class SidenavComponent{
 
   public newCountryName : string;
-  fetchStateList : boolean;
+  public _fetchStateList : boolean;
 
   public _countryResults :  Results[]=[];
+  public _stateResults :  Results[]=[];
   private _opened: boolean = true;
   private _modeNum: number = 0;
   private _positionNum: number = 0;
@@ -40,8 +41,17 @@ export class SidenavComponent{
       console.log(recievedCountryName);
   }
 
-  fetchStateList_Toggle(){
-    this.fetchStateList = true;
+  fetchStateList(countries : string){
+    this._fetchStateList = true;
+    this._stateResults=[];
+
+    this.searchService.getStatesList(countries).subscribe(
+      (res) => { 
+           for (let i=0;i<res.data.length; i++) {
+            this._stateResults.push(res.data[i].state);
+            // console.log(this._stateResults[i]);
+           }
+      });
   }
 
   private _toggleOpened(): void {
@@ -57,7 +67,7 @@ export class SidenavComponent{
   }
 
   constructor(private searchService : SearchService){
-    let fetchStateList = false;
+    this._fetchStateList = false;
   }
 
   private _toggleAutoCollapseHeight(): void {

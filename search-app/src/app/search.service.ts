@@ -103,6 +103,10 @@ export class SearchService {
       return this.http.get<Results>('./assets/countrieslist.json');
     }
 
+    getStatesList(countryName : string): Observable<Results>{
+      return this.http.get<Results>('./assets/statelist.json');
+    }
+
     getPopulations(): Object {
       return populations;     
   }

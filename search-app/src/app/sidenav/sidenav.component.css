@@ -31,3 +31,7 @@ mat-expansion-panel{
 mat-panel-title{
     color : white;
 }
+
+.stateexpansionpanel{
+    color: white;
+}

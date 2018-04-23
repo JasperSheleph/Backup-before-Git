@@ -30,16 +30,35 @@
     
     <perfect-scrollbar [config]="config">  
       
-        <mat-expansion-panel (click)="fetchStateList_Toggle"  *ngFor="let countries of _countryResults | searchfilter: _receivedCountryName" tabindex="-1">
+        <mat-expansion-panel (click)="fetchStateList(countries)"  *ngFor="let countries of _countryResults | searchfilter: _receivedCountryName" tabindex="-1">
             <mat-expansion-panel-header>
               <mat-panel-title>
                   {{countries}}
               </mat-panel-title>
             </mat-expansion-panel-header>
           
+          <div *ngIf="_fetchStateList">
+            <!-- <p >{{countries}}</p> -->
 
-            <p *ngIf="fetchStateList">This is the primary content of the panel.</p>
-          
+            <mat-nav-list class="material-list">
+              <mat-list-item class="stateexpansionpanel" *ngFor="let states of _stateResults" tabindex="-1">
+                    {{states}}
+                    <mat-divider></mat-divider>
+              </mat-list-item>
+              
+            </mat-nav-list>
+
+            <!-- <mat-expansion-panel class="stateexpansionpanel" *ngFor="let states of _stateResults" tabindex="-1">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                      {{states}}
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p >{{countries}}</p>
+            </mat-expansion-panel> -->
+
+          </div>
+
           </mat-expansion-panel>
           
      <!-- <mat-nav-list class="material-list">
